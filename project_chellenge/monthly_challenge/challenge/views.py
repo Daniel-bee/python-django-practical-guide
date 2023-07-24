@@ -11,11 +11,8 @@ challanges = {
 def index(request):
     month_link = ""
     months = list(challanges.keys())
-    for month in months:
-        dir_ = reverse('monthly-challenge', args=[month])
-        month_link += f"<li><a href='{dir_}'>{month.capitalize()}</a></li>"
-    path = f"<ul>{month_link}</ul>"
-    return HttpResponse(path)
+
+    return render(request, "challenge/index.html", {'months': months})
 def monthly_challenges_by_number(request, month):
     months = list(challanges.keys())
    
