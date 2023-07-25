@@ -6,7 +6,8 @@ from django.template.loader  import render_to_string
 challanges = {
     "january": "Eat no meat for the entire month!",
     "february": "Walk everyday at least 20 minute every day!",
-    "march": "Learn Django for at least 20 minutes every day!"
+    "march": "Learn Django for at least 20 minutes every day!",
+    "april": None
 }
 def index(request):
     month_link = ""

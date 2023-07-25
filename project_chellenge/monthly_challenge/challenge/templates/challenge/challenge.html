@@ -6,6 +6,10 @@
 </head>
 <body>
     <h1>{{title | title}} challenge</h1>
-    <p>{{text}}</p>
+    {% if text %}
+        <p>{{text}}</p>
+    {% else %}
+        <p>No Challenge for this month</p>
+    {% endif %}
 </body>
 </html>
