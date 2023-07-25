@@ -2,7 +2,9 @@
 
 {% block page-title%} {{title}} challenge {%endblock%}
 
-{% block containt %}
+
+{% block content %}
+{% include 'challenge/includes/header.html' %}
     <h1>{{title | title}} challenge</h1>
     {% if text %}
         <p>{{text}}</p>

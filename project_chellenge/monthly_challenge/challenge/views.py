@@ -18,7 +18,8 @@ def monthly_challenges_by_number(request, month):
     months = list(challanges.keys())
    
     if month > len(months) or month <= 0:
-        return HttpResponseNotFound("Month not supported!")
+        response = render_to_string("404.html")
+        return HttpResponseNotFound(response)
     redirect = months[month - 1]
     dir_ = reverse('monthly-challenge', args=[redirect])
     return HttpResponseRedirect(dir_)
@@ -28,5 +29,6 @@ def monthly_challenge(request, month):
         challenge = challanges[month]
         return render(request, "challenge/challenge.html", {"text":challenge, "title": month})
     except:
-        return HttpResponseNotFound("Month not supported!")
+        response = render_to_string("404.html")
+        return HttpResponseNotFound(response)
     
