@@ -1,5 +1,8 @@
 {% extends "base.html"%}
-<html lang="en">
+{% load static %}
+{% block css-file %}
+  <link rel="stylesheet" href="{% static 'challenge/challenge.css'%}">
+{% endblock %}
 {% block page-title%} Index {%endblock%}
 {% block content %}
 {% include 'challenge/includes/header.html' %}
